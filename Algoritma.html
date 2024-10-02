@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Line Equation and DDA Algorithm</title>
+</head>
+<body>
+    <h1>Line Equation and DDA Algorithm</h1>
+
+    <div class="input-container">
+        <label for="x1">x1:</label>
+        <input type="number" id="x1" name="x1" oninput="validateInputs()">
+        <label for="y1">y1:</label>
+        <input type="number" id="y1" name="y1" oninput="validateInputs()">
+        <label for="x2">x2:</label>
+        <input type="number" id="x2" name="x2" oninput="validateInputs()">
+        <label for="y2">y2:</label>
+        <input type="number" id="y2" name="y2"oninput="validateInputs()">
+    </div>
+
+    <div class="algorithm-selection">
+        <button id="calculateLine" onclick="calculateUsingLineEquation()" disabled>Basic Line Equation</button>    
+        <button id="calculateDDA" onclick="calculateUsingDDA()" disabled>DDA Algorithm</button>    
+        <button onclick="clearInputs()">Clear</button>
+    </div>
+
+    <!-- Tabel hasil Algoritma Garis -->
+    <table id="resultTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>x</th>
+                <th>dx</th>
+                <th>x + dx</th>
+                <th>y (b)</th>
+                <th>m</th>
+                <th>y</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <table id="resultTableDDA" style="display: none;">
+        <thead>
+            <tr>
+                <th>k</th>
+                <th>x</th>
+                <th>y</th>
+                <th>round(x), round(y)</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <canvas id="graphCanvas" style="display: none;">
+    </canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="algoritma.js"></script>
+</body>
+</html>
