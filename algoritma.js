@@ -35,6 +35,7 @@ function validateInputs() {
 }
 
 function calculateUsingLineEquation() {
+    document.querySelector('h1').innerText = 'Algoritma Dasar';
     let x1 = document.getElementById("x1").value;
     let y1 = document.getElementById("y1").value;
     let x2 = document.getElementById("x2").value;
@@ -74,6 +75,7 @@ function calculateUsingLineEquation() {
 }
 
 function calculateUsingDDA() {
+    document.querySelector('h1').innerText = 'Algoritma DDA (Digital Differential Analyzer)';
     let x1 = document.getElementById("x1").value;
     let y1 = document.getElementById("y1").value;
     let x2 = document.getElementById("x2").value;
@@ -105,6 +107,9 @@ function calculateUsingDDA() {
     let tableDDA = document.getElementById("resultTableDDA").getElementsByTagName('tbody')[0];
     tableDDA.innerHTML = ''; // Clear previous rows
 
+    // Clear graph data before starting
+    clearTableAndGraph(); // Call the function to clear previous data
+
     // Loop through each step and calculate the x, y values
     for (let k = 0; k <= steps; k++) {
         let roundedX = Math.round(x);
@@ -121,18 +126,21 @@ function calculateUsingDDA() {
         cell3.innerHTML = y.toFixed(2);
         cell4.innerHTML = `(${roundedX}, ${roundedY})`;
 
+        // Tambahkan titik ke grafik
+        addPointToGraph(roundedX, roundedY);
+
         x += xIncrement;
         y += yIncrement;
     }
+
+    // Update grafik setelah menambahkan semua titik
+    chart.update();
 
     // Show the DDA result table
     document.getElementById("resultTableDDA").style.display = "table";
     document.getElementById("graphCanvas").style.display = "block";
     document.getElementById("resultTable").style.display = "none";
-
-    chart.update();
 }
-
 
 
 function addRowToTable(x, dx, xPlusDx, yb, m, y) {
