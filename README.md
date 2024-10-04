@@ -15,31 +15,31 @@
 ![Screenshot 2024-10-04 153959](https://github.com/user-attachments/assets/afdb6ee5-8fff-4cb4-b6e4-17fd6d151d97)
 
 > Using DDA (Digital Differential Analyzer) Algorithm
-![Screenshot 2024-10-04 154038](https://github.com/user-attachments/assets/7ecdecd5-4622-4e4d-acc8-849277a3096c)
 ![Screenshot 2024-10-04 154031](https://github.com/user-attachments/assets/d2482715-04c5-4452-bc7c-153baa3c74b9)
+![Screenshot 2024-10-04 154038](https://github.com/user-attachments/assets/7ecdecd5-4622-4e4d-acc8-849277a3096c)
 
 3. (2,3) and (5,3)
 > Using Basic Line Equation
-![Screenshot 2024-10-04 154202](https://github.com/user-attachments/assets/87ff071c-b03b-496d-83fe-b51bfc3fedf4)
 ![Screenshot 2024-10-04 154154](https://github.com/user-attachments/assets/5481a7c0-a31e-4038-a819-6d6bed3283be)
+![Screenshot 2024-10-04 154202](https://github.com/user-attachments/assets/87ff071c-b03b-496d-83fe-b51bfc3fedf4)
 
 > Using DDA (Digital Differential Analyzer) Algorithm
-![Screenshot 2024-10-04 154202](https://github.com/user-attachments/assets/987ef370-340a-434e-ae91-2454c56fdbd2)
 ![Screenshot 2024-10-04 154208](https://github.com/user-attachments/assets/29ea00cd-cab7-47c4-b331-812a2ab9ed36)
+![Screenshot 2024-10-04 154202](https://github.com/user-attachments/assets/987ef370-340a-434e-ae91-2454c56fdbd2)
 
 4. (2,3) and (2,5)
 > Using Basic Line Equation
-![Screenshot 2024-10-04 154413](https://github.com/user-attachments/assets/3fb5b7f7-eb2e-4b0b-8c3d-80b8ac311730)
 ![Screenshot 2024-10-04 154406](https://github.com/user-attachments/assets/09014eb4-b314-4637-9fa6-1d9cb7bb8d1d)
+![Screenshot 2024-10-04 154413](https://github.com/user-attachments/assets/3fb5b7f7-eb2e-4b0b-8c3d-80b8ac311730)
 
 > Using DDA (Digital Differential Analyzer) Algorithm
-![Screenshot 2024-10-04 154425](https://github.com/user-attachments/assets/abdf395c-e3af-40c2-83cf-89f786f03c85)
 ![Screenshot 2024-10-04 154421](https://github.com/user-attachments/assets/e44a5a73-1e8c-4ad3-9a47-54d4e9240de5)
+![Screenshot 2024-10-04 154425](https://github.com/user-attachments/assets/abdf395c-e3af-40c2-83cf-89f786f03c85)
 
 5. (6,4) and (2,1)
 > Using Basic Line Equation
 ![Screenshot 2024-10-04 154618](https://github.com/user-attachments/assets/1a0a49a8-2211-47c5-a98d-f1b75849c43f)
 
 > Using DDA (Digital Differential Analyzer) Algorithm
-![Screenshot 2024-10-04 154632](https://github.com/user-attachments/assets/e538b5cc-7fdd-4431-a262-9cba2cc8742c)
 ![Screenshot 2024-10-04 154627](https://github.com/user-attachments/assets/ad26a0cc-beae-4e21-a941-173f422eb63b)
+![Screenshot 2024-10-04 154632](https://github.com/user-attachments/assets/e538b5cc-7fdd-4431-a262-9cba2cc8742c)
