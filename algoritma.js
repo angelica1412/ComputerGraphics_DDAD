@@ -27,10 +27,12 @@ function validateInputs() {
     // Periksa apakah semua input memiliki nilai
     if (x1 !== '' && y1 !== '' && x2 !== '' && y2 !== '') {
         document.getElementById("calculateDDA").disabled = false;  // Aktifkan tombol DDA
-        document.getElementById("calculateLine").disabled = false;  // Aktifkan tombol Basic Line
+        document.getElementById("calculateLine").disabled = false;
+        document.getElementById("calculateUsingBresenhamLine").disabled = false;  // Aktifkan tombol Basic Line
     } else {
         document.getElementById("calculateDDA").disabled = true;   // Nonaktifkan tombol DDA
-        document.getElementById("calculateLine").disabled = true;  // Nonaktifkan tombol Basic Line
+        document.getElementById("calculateLine").disabled = true;
+        document.getElementById("calculateUsingBresenhamLine").disabled = true;
     }
 }
 
@@ -72,6 +74,7 @@ function calculateUsingLineEquation() {
     document.getElementById("resultTable").style.display = "table";
     document.getElementById("graphCanvas").style.display = "block";
     document.getElementById("resultTableDDA").style.display = "none";
+    document.getElementById("resultTableBresenhamLine").style.display = "none";
 }
 
 function calculateUsingDDA() {
@@ -140,8 +143,80 @@ function calculateUsingDDA() {
     document.getElementById("resultTableDDA").style.display = "table";
     document.getElementById("graphCanvas").style.display = "block";
     document.getElementById("resultTable").style.display = "none";
+    document.getElementById("resultTableBresenhamLine").style.display = "none";
 }
 
+function calculateUsingBresenhamLine() {
+    document.querySelector('h1').innerText = 'Bresenham Line Equation';
+    let x0 = parseInt(document.getElementById("x1").value);
+    let y0 = parseInt(document.getElementById("y1").value);
+    let x1 = parseInt(document.getElementById("x2").value);
+    let y1 = parseInt(document.getElementById("y2").value);
+
+    let dx = Math.abs(x1 - x0);
+    let dy = Math.abs(y1 - y0);
+    let p = 2 * dy - dx; // p0 atau p awal
+    let twoDy = 2 * dy;
+    let twoDyDx = 2 * (dy - dx);
+
+    let x, y, xEnd;
+
+    if (x0 > x1) {
+        x = x1;
+        y = y1;
+        xEnd = x0;
+    } else {
+        x = x0;
+        y = y0;
+        xEnd = x1;
+    }
+
+    // Bersihkan tabel Bresenham sebelum menambahkan titik baru
+    let tableBresenham = document.getElementById("resultTableBresenhamLine").getElementsByTagName('tbody')[0];
+    tableBresenham.innerHTML = ''; // Clear previous rows
+
+    // Inisialisasi tabel dengan titik awal
+    displayPoint(-1, '', x, y); // Baris pertama tanpa k dan p
+
+    let k = 0;
+    displayPoint(k, p, x, y); // Menampilkan p0 pada baris kedua
+    k++;
+    while (x < xEnd) {
+        x++;
+        if (p < 0) {
+            p += twoDy;
+        } else {
+            y++;
+            p += twoDyDx;
+        }
+        displayPoint(k, p, x, y);
+        k++;
+    }
+    chart.update();
+
+    document.getElementById("graphCanvas").style.display = "block";
+    document.getElementById("resultTable").style.display = "none";
+    document.getElementById("resultTableDDA").style.display = "none";
+}
+
+function displayPoint(k, p, x, y) {
+    let table = document.getElementById("resultTableBresenhamLine");
+    let row = table.insertRow(-1);
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+    let cell4 = row.insertCell(3);
+    let cell5 = row.insertCell(4);
+
+    cell1.innerHTML = k >= 0 ? k : ''; // Tidak menampilkan k untuk baris pertama
+    cell2.innerHTML = k >= 0 ? p : ''; // Tidak menampilkan p untuk baris pertama
+    cell3.innerHTML = x;
+    cell4.innerHTML = y;
+    cell5.innerHTML = `(${Math.round(x)}, ${Math.round(y)})`; // Format yang benar untuk koordinat
+
+    table.style.display = "table";
+    addPointToGraph(Math.round(x), Math.round(y)); // Tambahkan titik ke grafik
+}
 
 function addRowToTable(x, dx, xPlusDx, yb, m, y) {
     let table = document.getElementById("resultTable").getElementsByTagName('tbody')[0];
@@ -189,5 +264,6 @@ function clearInputs() {
     // Sembunyikan tabel saat tombol Clear diklik
     document.getElementById("resultTable").style.display = "none";
     document.getElementById("resultTableDDA").style.display = "none";
+    document.getElementById("resultTableBresenhamLine").style.display = "none";
     document.getElementById("graphCanvas").style.display = "none";
 }

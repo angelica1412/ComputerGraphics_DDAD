@@ -11,7 +11,7 @@ h1 {
     color: #2c3e50;
 }
 
-.input-container, .algorithm-selection {
+.input-container, .algorithm-selection, .circle, .input-lingkaran, .button-circle, .homepage {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -82,4 +82,5 @@ canvas {
 label{
     font-size: 20px;
 }
+
 

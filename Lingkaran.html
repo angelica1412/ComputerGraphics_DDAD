@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Algoritma Bresenham untuk Lingkaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Algoritma Bresenham untuk Lingkaran</h1>
+    <div class="input-lingkaran">
+        <label for="xCenter">x pusat:</label>
+        <input type="number" id="xCenter" name="xCenter">
+        <label for="yCenter">y pusat:</label>
+        <input type="number" id="yCenter" name="yCenter">
+        <label for="radius">Radius:</label>
+        <input type="number" id="radius" name="radius">
+    </div>
+    <div class="button-circle">
+        <button onclick="calculateUsingBresenhamCircle()">Gambar Lingkaran</button>
+    </div>
+    <div class="homepage">
+        <button onclick="window.location.href='Algoritma.html'">Kembali ke Halaman Utama</button>  
+    </div>
+    <canvas id="graphCanvas" width="500" height="500"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="circle.js"></script>
+</body>
+</html>

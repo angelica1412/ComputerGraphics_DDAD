@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Line Equation and DDA Algorithm</title>
 </head>
+
 <body>
-    <h1>Line Equation and DDA Algorithm</h1>
+    <h1>Types of Algorithms</h1>
 
     <div class="input-container">
         <label for="x1">x1:</label>
@@ -17,12 +19,13 @@
         <label for="x2">x2:</label>
         <input type="number" id="x2" name="x2" oninput="validateInputs()">
         <label for="y2">y2:</label>
-        <input type="number" id="y2" name="y2"oninput="validateInputs()">
+        <input type="number" id="y2" name="y2" oninput="validateInputs()">
     </div>
 
     <div class="algorithm-selection">
-        <button id="calculateLine" onclick="calculateUsingLineEquation()" disabled>Basic Line Equation</button>    
-        <button id="calculateDDA" onclick="calculateUsingDDA()" disabled>DDA Algorithm</button>    
+        <button id="calculateLine" onclick="calculateUsingLineEquation()" disabled>Basic Line Equation</button>
+        <button id="calculateDDA" onclick="calculateUsingDDA()" disabled>DDA Algorithm</button>
+        <button id="calculateBresenhamLine" onclick="calculateUsingBresenhamLine()">Bresenham Line Equation</button>
         <button onclick="clearInputs()">Clear</button>
     </div>
 
@@ -55,10 +58,26 @@
         </tbody>
     </table>
 
+    <!-- Tabel untuk hasil algoritma Bresenham Line -->
+    <table id="resultTableBresenhamLine" style="display: none;">
+        <thead>
+            <tr>
+                <th>k</th>
+                <th>pk</th>
+                <th>x</th>
+                <th>y</th>
+                <th>round(x), round(y)</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
     <canvas id="graphCanvas" style="display: none;">
     </canvas>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="algoritma.js"></script>
 </body>
+
 </html>
