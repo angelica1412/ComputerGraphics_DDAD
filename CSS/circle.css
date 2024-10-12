@@ -11,7 +11,7 @@ h1 {
     color: #2c3e50;
 }
 
-.input-container, .algorithm-selection, .circle, .input-lingkaran, .button-circle, .homepage {
+.input-lingkaran, .button-circle, .homepage{
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -36,51 +36,22 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
 button:hover {
     background-color: #2980b9;
-}
-
-table {
-    margin-top: 20px;
-    border-collapse: collapse;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-table, th, td {
-    border: 1px solid #bdc3c7;
-    text-align: center;
-}
-
-th, td {
-    padding: 10px;
-}
-
-th{
     font-weight: bold;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tr:hover {
-    background-color: #eaeaea;
-}
-
-canvas {
-    margin-top: 20px;
-    border: 1px solid black;
-    width: 70% !important;
-    height: auto !important;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 label{
     font-size: 20px;
 }
 
+canvas {
+    display: flex;
+    margin-top: 20px;
+    border: 1px solid black;
+    width: 100% !important;
+    height: auto !important;
+    margin-left: auto;
+    margin-right: auto;
+}
 

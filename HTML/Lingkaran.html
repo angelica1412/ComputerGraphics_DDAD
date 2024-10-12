@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Algoritma Bresenham untuk Lingkaran</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/CSS/circle.css">
 </head>
 <body>
     <h1>Algoritma Bresenham untuk Lingkaran</h1>
@@ -16,13 +16,14 @@
         <input type="number" id="radius" name="radius">
     </div>
     <div class="button-circle">
-        <button onclick="calculateUsingBresenhamCircle()">Gambar Lingkaran</button>
+        <button onclick="drawCircle()" style="background-color: #49d67d; font-size: 20px;">Gambar Lingkaran</button>
+        <button onclick="clearInputs()">Clear</button>
     </div>
     <div class="homepage">
-        <button onclick="window.location.href='Algoritma.html'">Kembali ke Halaman Utama</button>  
+        <button onclick="window.location.href='Algoritma.html'" style="width: 10%;">Kembali ke Halaman Utama</button>  
     </div>
-    <canvas id="graphCanvas" width="500" height="500"></canvas>
+    <canvas id="circleCanvas" style="display: none;"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="circle.js"></script>
+    <script src="/JS/circle.js"></script>
 </body>
 </html>
