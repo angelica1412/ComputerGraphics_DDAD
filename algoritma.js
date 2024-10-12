@@ -172,6 +172,10 @@ function calculateUsingBresenhamLine() {
     let tableBresenham = document.getElementById("resultTableBresenhamLine").getElementsByTagName('tbody')[0];
     tableBresenham.innerHTML = ''; // Clear previous rows
 
+    // Clear graph
+    chart.data.labels = [];
+    chart.data.datasets[0].data = [];
+
     // Inisialisasi tabel dengan titik awal
     displayPoint(-1, '', x, y); // Baris pertama tanpa k dan p
 
@@ -198,7 +202,8 @@ function calculateUsingBresenhamLine() {
 
 function displayPoint(k, p, x, y) {
     let table = document.getElementById("resultTableBresenhamLine");
-    let row = table.insertRow(-1);
+    let tableBody = table.getElementsByTagName('tbody')[0];
+    let row = tableBody.insertRow(-1);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
