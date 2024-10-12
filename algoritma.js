@@ -24,17 +24,17 @@ function validateInputs() {
     let x2 = document.getElementById("x2").value;
     let y2 = document.getElementById("y2").value;
 
-    // Periksa apakah semua input memiliki nilai
     if (x1 !== '' && y1 !== '' && x2 !== '' && y2 !== '') {
-        document.getElementById("calculateDDA").disabled = false;  // Aktifkan tombol DDA
+        document.getElementById("calculateDDA").disabled = false;
         document.getElementById("calculateLine").disabled = false;
-        document.getElementById("calculateUsingBresenhamLine").disabled = false;  // Aktifkan tombol Basic Line
+        document.getElementById("calculateBresenhamLine").disabled = false; // Correct ID
     } else {
-        document.getElementById("calculateDDA").disabled = true;   // Nonaktifkan tombol DDA
+        document.getElementById("calculateDDA").disabled = true;
         document.getElementById("calculateLine").disabled = true;
-        document.getElementById("calculateUsingBresenhamLine").disabled = true;
+        document.getElementById("calculateBresenhamLine").disabled = true; // Correct ID
     }
 }
+
 
 function calculateUsingLineEquation() {
     document.querySelector('h1').innerText = 'Algoritma Dasar';
@@ -175,6 +175,10 @@ function calculateUsingBresenhamLine() {
     let tableBresenham = document.getElementById("resultTableBresenhamLine").getElementsByTagName('tbody')[0];
     tableBresenham.innerHTML = ''; // Clear previous rows
 
+   // Clear graph
+    chart.data.labels = [];
+    chart.data.datasets[0].data = [];
+
     // Inisialisasi tabel dengan titik awal
     displayPoint(-1, '', x, y); // Baris pertama tanpa k dan p
 
@@ -201,7 +205,8 @@ function calculateUsingBresenhamLine() {
 
 function displayPoint(k, p, x, y) {
     let table = document.getElementById("resultTableBresenhamLine");
-    let row = table.insertRow(-1);
+    let tableBody = table.getElementsByTagName('tbody')[0];
+    let row = tableBody.insertRow(-1);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
